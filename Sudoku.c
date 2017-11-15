@@ -25,14 +25,14 @@ STATUS USER_SetSudoku(TypeDefSudoku *Sudoku)
 		printf("Option 2: \nEnter the total number of given elements in Sudoku, \n");
 		printf("then fill the slot(s) one by one by entering row number, column number, and the element in the certain slot. ");
 		printf("For option 1, please enter 1, otherwise please enter 2. \n");
-		scanf_s("%d", &NUM);
+		scanf("%d", &NUM);
 		if (NUM == 2)
 		{
-			system("cls");
+			system("clear");
 			while (1)
 			{
 				printf("Please enter the total number of element(s) to be initialized. \n");
-				scanf_s("%d", &NUM);
+				scanf("%d", &NUM);
 				if (NUM >= 0 && NUM <= 81)
 					break;
 				else
@@ -44,12 +44,12 @@ STATUS USER_SetSudoku(TypeDefSudoku *Sudoku)
 				{
 					printf("Element Number %d of %d:\n", i + 1, NUM);
 					printf("Enter row number(1-9). \n");
-					scanf_s("%d", &row);
+					scanf("%d", &row);
 					printf("Enter column number(1-9). \n");
-					scanf_s("%d", &column);
+					scanf("%d", &column);
 					printf("Enter Number to be put in this slot. \n");
-					scanf_s("%d", &num);
-					system("cls");
+					scanf("%d", &num);
+					system("clear");
 					if (SetSudoku(Sudoku, row, column, num) == ERROR)
 					{
 						printf("Invalid data. This input will not be taken into account. \n");
@@ -66,7 +66,7 @@ STATUS USER_SetSudoku(TypeDefSudoku *Sudoku)
 		}
 		else if (NUM == 1)
 		{
-			system("cls");
+			system("clear");
 			for (row = 1; row <= 9; row++)
 			{
 				while (1)
@@ -77,14 +77,14 @@ STATUS USER_SetSudoku(TypeDefSudoku *Sudoku)
 					InputValidFlag = TRUE;
 					for (column = 1; column <= 9; column++)
 					{
-						scanf_s("%d", &NUM);
+						scanf("%d", &NUM);
 						if (NUM != 0 && Sudoku->Data[row - 1][column - 1] == 0)
 						{
 							if (SetSudoku(Sudoku, row, column, NUM) == FALSE)
 								InputValidFlag = FALSE;
 						}
 					}
-					system("cls");
+					system("clear");
 					if (InputValidFlag == TRUE)
 						break;
 					else
@@ -100,7 +100,7 @@ STATUS USER_SetSudoku(TypeDefSudoku *Sudoku)
 		}
 		else
 		{
-			system("cls");
+			system("clear");
 			printf("Invalid Input. \n\n");
 		}
 	}

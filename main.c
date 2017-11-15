@@ -1,13 +1,13 @@
 #include "main.h"
 
-void main()
+int main()
 {
 	TypeDefSudoku Sudoku,Solution;
 	clock_t t_begin, t_end;
 	InitSudoku(&Sudoku);
 	InitSudoku(&Solution);
 	USER_SetSudoku(&Sudoku);
-	system("cls");
+	system("clear");
 	printf("Puzzle: \n");
 	PrintSudoku(Sudoku);
 	system("pause");
@@ -23,6 +23,6 @@ void main()
 	else
 		printf("No Solution Found. \n");
 	t_end=clock();
-	printf("Time elapsed: %ld ms. \n",t_end-t_begin);
-	system("pause");
+	printf("Time elapsed: %lf s. \n",(double)(t_end-t_begin)/CLOCKS_PER_SEC);
+	return 0;
 }
