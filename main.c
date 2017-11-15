@@ -23,6 +23,6 @@ void main()
 	else
 		printf("No Solution Found. \n");
 	t_end=clock();
-	printf("Time elapsed: %ld ms. \n",t_end-t_begin);
+	printf("Time elapsed: %lf ms. \n",(double)(t_end-t_begin)/CLOCKS_PER_SEC);
 	system("pause");
 }
